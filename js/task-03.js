@@ -12,3 +12,40 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const galleryList = document.querySelector('.gallery');
+
+
+// ======= First version =============
+
+const listOfItem = ({ url, alt }) => {
+  return `<li class="item"><img src=${url} alt=${alt} class="images"></li>`   
+}
+
+const allListOfItem = images.map(listOfItem).join('');
+
+galleryList.insertAdjacentHTML("afterbegin", allListOfItem)
+
+
+// ======= Second version =============
+
+// const allListOfItems = (images => {
+//   return images.map(({ url, alt }) => {
+//     const itemOfGallery = document.createElement('li');
+//     itemOfGallery.classList.add('item');
+
+//     const imageOfGallery = document.createElement('img');
+//     imageOfGallery.src = url;
+//     imageOfGallery.alt = alt;
+//     imageOfGallery.classList.add('images');
+
+//     itemOfGallery.append(imageOfGallery);
+
+//     return itemOfGallery;
+//   });
+// });
+
+// const elements = allListOfItems(images);
+
+// galleryList.append(...elements);
+

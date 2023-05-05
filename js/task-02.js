@@ -13,7 +13,7 @@ const listOfIngredients = document.querySelector('#ingredients');
 
 const allListOfIngredient = [];
 
-ingredients.map(ingredient => {
+ingredients.forEach(ingredient => {
   const itemsOfList = document.createElement('li');
   itemsOfList.textContent = ingredient;
   itemsOfList.classList.add('item');
