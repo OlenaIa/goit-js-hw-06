@@ -23,27 +23,12 @@ galleryList.style.gap = '20px'
 // ======= First version =============
 
 const listOfItem = ({ url, alt }) => {
-  return `<li class="item"><img src=${url} alt=${alt} class="image"></li>`   
+  return `<li style="padding: 20px; border: 1px solid rgb(0, 0, 0)"><img src=${url} alt=${alt} style="width: 300px"></li>`   
 }
 
 const allListOfItem = images.map(listOfItem).join('');
 
 galleryList.insertAdjacentHTML("afterbegin", allListOfItem);
-
-const liRef = document.querySelectorAll('.item');
-liRef.forEach(li => {
-li.style.flexBasis = 'calc((100% - 2*20px) / 3)';
-li.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
-li.style.border = '1px solid rgb(0, 0, 0)';
-li.style.padding = '20px';
-})
-
-
-const imgRef = document.querySelectorAll('.image');
-imgRef.forEach(img => {
-  img.style.width = '300px';
-  img.style.display = 'block';
-});
 
 
 // ======= Second version =============
