@@ -4,5 +4,6 @@ const spanRef = document.querySelector('#name-output');
 
 
 inputRef.addEventListener("input", (event) => {
-    event.currentTarget.value === '' ? spanRef.textContent = 'Anonymous' : spanRef.textContent = event.currentTarget.value;
+    const valueWithoutSpace = event.currentTarget.value.trim();
+    valueWithoutSpace === '' ? spanRef.textContent = 'Anonymous' : spanRef.textContent = valueWithoutSpace;
 })

@@ -5,7 +5,8 @@ inputRef.addEventListener("blur", onValidButtonBlur);
 // -------- First version-----
 
 function onValidButtonBlur(event) {
-    if (inputRef.value.length === parseInt(inputRef.dataset.length)) {
+    const valueWithoutSpace = inputRef.value.trim();
+    if (valueWithoutSpace.length === parseInt(inputRef.dataset.length)) {
         inputRef.classList.add('valid');
         inputRef.classList.remove('invalid');
     } else {
@@ -13,7 +14,7 @@ function onValidButtonBlur(event) {
         inputRef.classList.remove('valid');
     };
 
-    if (inputRef.value.length === 0) {
+    if (valueWithoutSpace.length === 0) {
         inputRef.classList.remove('invalid', 'valid');
     };
 };

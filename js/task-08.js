@@ -8,8 +8,8 @@ function onSubmitFormValid(event) {
 
     const { elements: { email, password } } = event.currentTarget;
     const dataForm = {
-    email: email.value,
-    password: password.value
+    email: email.value.trim(),
+    password: password.value.trim()
     }
     
     if (dataForm.email === "" || dataForm.password === "") {
